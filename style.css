@@ -620,6 +620,72 @@ section{
     bottom: 4%;
     right: 6%;
 }
+.navlist {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.navlist > li {
+    position: relative;
+    margin-right: 20px;
+}
+
+.navlist li a {
+    text-decoration: none;
+    color: #000;
+    padding: 8px 12px;
+    display: inline-block;
+}
+
+.navlist li a:hover,
+.navlist li a.active {
+    color: #0077ee;
+}
+
+/* Dropdown styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;      /* মেনুর ঠিক নিচে */
+    left: 0;
+    background: #e2e2e2;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    min-width: 200px;
+    z-index: 100;
+    padding: 3px 0;  /* প্যাডিং কমিয়ে দিলাম */
+    flex-direction: column;
+}
+
+.dropdown-content li {
+    margin: 0;
+}
+
+.dropdown-content li a {
+    padding: 7px 12px;
+    color: #333;
+    display: block;
+    white-space: nowrap; /* এক লাইনে রাখে */
+    font-size: 14px;
+}
+
+.dropdown-content li a:hover {
+    background-color: #1e90ff;
+    color: #fff;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover > .dropdown-content {
+    display: block;
+}
+/* Dropdown মেনু নামের পাশে arrow */
+.navlist li.dropdown > a::after {
+    content: " ▼";  /* নিচের দিকে ত্রিভুজ */
+    font-size: 0.6rem;
+    margin-left: 5px;
+    color: #555;
+}
 
 
 /* ==================== Services section css code ============================ */
@@ -1092,22 +1158,4 @@ footer{
         width: 100%;
         padding: 13px;
     }
-}
-/* WhatsApp Floating Button */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
-    color: white;
-    font-size: 28px;
-    padding: 12px 16px;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 999;
-    transition: transform 0.2s;
-}
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    background-color: #1ebe5d;
 }
